@@ -1,21 +1,21 @@
 package com.etherofgodd;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public class Main {
 
     public static  void main(String[] args) {
-//        The sting class
+        Date date = new Date();
+        String s = new String();
+        LocalDate localdate = LocalDate.now();
+        LocalDateTime localDateTime = LocalDateTime.now();
 
-        String name = new String("Etherofgodd");
-        System.out.println(name.toUpperCase().charAt(0));
+        // Reserved Keywords
+
+//        void, file, private, final, class, static
 
 
-        String myname ="OMOOO";
-
-        System.out.println(name.toUpperCase());
-        System.out.println(name.toLowerCase());
-        System.out.println(name.charAt(4));
-        String code = "codes";
-        System.out.println(name.contains((code)));
-        System.out.println(name.equals(("OMO")));
     }
 }
