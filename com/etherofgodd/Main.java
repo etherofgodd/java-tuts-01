@@ -5,45 +5,32 @@ import java.util.Date;
 
 public class Main {
 
-    public static  void main(String[] args){
-    //  primitive data type; int long double
-        byte theByte = -123;
-        short theShort = 3933;
-        int theInt = 100;
-        long theLong = 3131301301301301313L;
+    public static  void main(String[] args) {
 
-//        Below for decimals
-        float theFloat = 2.12F;
-        double doublePi = 3.142;
+    //  Difference between static and reference types
+        int a = 10;
+        int b = a;
 
-        boolean isBroke = true;
+        a = 100;
 
-//        characters
+        System.out.println("a =  "+ a + " - b = " + b);
 
-        char nameInitials = 'E';
+        Person alex = new Person("alex");
+        Person mariam = alex;
+        alex.name = "KUNBI";
 
-        System.out.println(nameInitials);;
-        System.out.println(theByte);;
-        System.out.println(theFloat);;
-        System.out.println(isBroke);;
-        System.out.println(doublePi);;
-        String alias = "ether of godd";
+       System.out.println(alex.name);
+       System.out.println(mariam.name);
 
-        Date date = new Date();
-        System.out.println(date);
-
-//        underscores to visualize numbers
-        int amountOf = 3_000_000;
-        System.out.println(amountOf);
-
-//      NON primitive data types AKA reference types, String
-        String name =  new String("Etherofgodd");
-        System.out.println(name.toUpperCase());
-
-//        more reference types
-
-        LocalDate now = LocalDate.now();
-        System.out.println(now.getYear());
 
     }
+
+    static class Person {
+        String name;
+        Person(String name) {
+            this.name = name;
+        }
+    }
+
+//  use camel case for naming variables.
 }
