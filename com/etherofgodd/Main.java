@@ -1,5 +1,6 @@
 package com.etherofgodd;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Main {
@@ -10,7 +11,6 @@ public class Main {
         short theShort = 3933;
         int theInt = 100;
         long theLong = 3131301301301301313L;
-//        above 4 allows to store whole numbers;
 
 //        Below for decimals
         float theFloat = 2.12F;
@@ -36,6 +36,14 @@ public class Main {
         int amountOf = 3_000_000;
         System.out.println(amountOf);
 
+//      NON primitive data types AKA reference types, String
+        String name =  new String("Etherofgodd");
+        System.out.println(name.toUpperCase());
+
+//        more reference types
+
+        LocalDate now = LocalDate.now();
+        System.out.println(now.getYear());
 
     }
 }
