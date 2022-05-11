@@ -1,36 +1,21 @@
 package com.etherofgodd;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class Main {
 
     public static  void main(String[] args) {
+//        The sting class
 
-    //  Difference between static and reference types
-        int a = 10;
-        int b = a;
-
-        a = 100;
-
-        System.out.println("a =  "+ a + " - b = " + b);
-
-        Person alex = new Person("alex");
-        Person mariam = alex;
-        alex.name = "KUNBI";
-
-       System.out.println(alex.name);
-       System.out.println(mariam.name);
+        String name = new String("Etherofgodd");
+        System.out.println(name.toUpperCase().charAt(0));
 
 
+        String myname ="OMOOO";
+
+        System.out.println(name.toUpperCase());
+        System.out.println(name.toLowerCase());
+        System.out.println(name.charAt(4));
+        String code = "codes";
+        System.out.println(name.contains((code)));
+        System.out.println(name.equals(("OMO")));
     }
-
-    static class Person {
-        String name;
-        Person(String name) {
-            this.name = name;
-        }
-    }
-
-//  use camel case for naming variables.
 }
