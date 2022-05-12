@@ -2,52 +2,36 @@ package com.etherofgodd;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static  void main(String[] args) {
 
-//        classes and objects
+//       A program that accepts a sccre as input and returns the grade as output.
 
-        Lens lensOne = new Lens("Panasonic", "85mm", false);
-        Lens lensTwo = new Lens("Sony", "95mm", true);
-        Lens lensThree = new Lens("Cannon", "103mm", true);
+        Scanner scoreInput = new Scanner(System.in);
+        System.out.println("What was the score for this course?");
 
-        System.out.println(lensOne.brand);
-        System.out.println(lensTwo.focalLength);
-        System.out.println(lensThree.isPrime);
-    }
+        int score = scoreInput.nextInt();
 
-    public static  class Lens {
-        String brand;
-        String focalLength;
-        boolean isPrime;
-
-        Lens(String brand, String focalLength, boolean isPrime){
-            this.brand = brand;
-            this.focalLength = focalLength;
-            this.isPrime = isPrime;
-        }
-
-        Passport ukPassport = new Passport(
-                "012",
-                LocalDate.of(2024,12,29));
-
-        Passport usPassport = new Passport(
-                "013",
-                LocalDate.of(2025,3,21));
-    }
-
-    static  class Passport {
-        String number;
-        LocalDate expiryDate;
-
-        Passport(String number, LocalDate expiryDate){
-            this.number = number;
-            this.expiryDate = expiryDate;
+        if(score >= 70 && score <= 100){
+            System.out.println("GRADE: A");
+        }else if (score>=60 && score<=69){
+            System.out.println("GRADE: B");
+        }else if(score>=50 && score <=59){
+            System.out.println("GRADE: C");
+        }else if(score>=45 && score<= 49){
+            System.out.println("GRADE: D");
+        }else if(score>=0 && score<=44){
+            System.out.println("GRADE: F");
+        }else {
+            System.out.println("Your Score is out of the grading system limit");
         }
 
 
     }
+
+
 
 }
