@@ -1,29 +1,38 @@
 package com.etherofgodd;
 
-import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
 
     public static  void main(String[] args) {
 
-//      Scanner
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What's your name?");
+//    Methods
 
-        String userName = scanner.nextLine();
+//        Built in methods
+        System.out.println("Hurray");
+        String brand = "Samsung";
+        System.out.println(brand.toUpperCase());
+        System.out.println(brand.startsWith("S"));
 
+//        custom methods
 
-        System.out.println("How old are you?");
+        char[] letters = {'A', 'B', 'C','D','D','E','7'};
 
-        int age = scanner.nextInt();
+        System.out.println(countOccurrences(letters, 'D'));
 
-        System.out.println("Your name is "+ userName);
-        System.out.println("You are "+ age+ " years of age");
-        int year = LocalDate.now().minusYears(age).getYear();
-        System.out.println("You were born in " + year);
+    }
 
+    public static  int countOccurrences(char[] letters,  char searchLetter){
+        System.out.println(Arrays.toString(letters));
+        System.out.println(searchLetter);
+
+        int count = 0;
+        for (char letter: letters){
+            if(letter == searchLetter){
+                count++;
+            }
+        }
+        return  count;
     }
 
 }
