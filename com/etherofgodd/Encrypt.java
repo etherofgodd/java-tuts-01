@@ -88,7 +88,7 @@ public class Encrypt {
         B = B.replace("o","2");
         B = B.replace("u","4");
 
-        String encryptedData = A + B;
+        String encryptedData = B + A;
 
         System.out.println("The encrypted data is : "+ encryptedData);
     }
