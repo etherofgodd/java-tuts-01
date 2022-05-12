@@ -1,26 +1,28 @@
 package com.etherofgodd;
 
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static  void main(String[] args) {
 
-//        while loops
+//      Scanner
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What's your name?");
 
-        int count = 0;
+        String userName = scanner.nextLine();
 
-        while (count <= 20){
-            System.out.println("Count "+ count);
-            count++;
-        }
 
-//
-//        do while
-        do {
-            System.out.println("Count from the do "+count);
-            count++;
-        } while (count <= 20);
+        System.out.println("How old are you?");
+
+        int age = scanner.nextInt();
+
+        System.out.println("Your name is "+ userName);
+        System.out.println("You are "+ age+ " years of age");
+        int year = LocalDate.now().minusYears(age).getYear();
+        System.out.println("You were born in " + year);
 
     }
 
