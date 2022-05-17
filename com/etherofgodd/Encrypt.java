@@ -2,7 +2,17 @@ package com.etherofgodd;
 
 import java.util.Scanner;
 
+
 public class Encrypt {
+
+    public String reverseString(String reversibleString){
+        String reversedString = "";
+        for (int i = 0; i < reversibleString.length(); i++){
+            reversedString = reversibleString.charAt(i) + reversedString;
+        }
+
+        return  reversedString;
+    }
 
     public void encrypt(){
         //        I used this to collect the data input
@@ -30,30 +40,22 @@ public class Encrypt {
 
 //            If it is, i proceed :)
             if (data.length() % 2 == 1){
-//                if its an odd number, i add one to the end of the  half, making it even. then i use the substring method to return the
+//                if it's an odd number, i add one to the end of the  half, making it even. then i use the substring method to return the
 //                sub string from index 0, to exact half + 1 index
                 A = data.substring(0, dividedByTwo + 1);
 
-//                Used the StringBuilder class to create a copy of A
-                StringBuilder sb1 = new StringBuilder(A);
 
-//                reversed the string as specified
-                sb1.reverse();
+
+//
 
 //                assigned the reversed string
-                A = sb1.toString();
+                A = reverseString(A);
 
 //                  I Assigned B the rest of the string from the exact half + 1 index to the end
                 B = data.substring(dividedByTwo + 1);
 
-                //Used the StringBuilder class to create a copy of B
-                StringBuilder sb2 = new StringBuilder(B);
+                B = reverseString(B);
 
-//                Reversed string as specified
-                sb2.reverse();
-
-//                assigned the reversed string;
-                B = sb2.toString();
 
 
 
@@ -63,15 +65,13 @@ public class Encrypt {
 
 
                 A = data.substring(0, dividedByTwo);
-                StringBuilder sb1 = new StringBuilder(A);
-                sb1.reverse();
-                A = sb1.toString();
+
+                A = reverseString(A);
 
 
                 B = data.substring(dividedByTwo);
-                StringBuilder sb2 = new StringBuilder(B);
-                sb2.reverse();
-                B = sb2.toString();
+
+                B = reverseString(B);
 
             }
 
@@ -122,48 +122,33 @@ public class Encrypt {
 
         }else {
             if (decyptData.length() % 2 == 1){
-//                if its an odd number, i add one to the end of the  half, making it even. then i use the substring method to return the
+//                if it's an odd number, i add one to the end of the  half, making it even. then i use the substring method to return the
 //                sub string from index 0, to exact half + 1 index
                 C = decyptData.substring(0, dividedDecyptByTwo + 1);
 
-//                Used the StringBuilder class to create a copy of A
-                StringBuilder sb3 = new StringBuilder(C);
 
-//                reversed the string as specified
-                sb3.reverse();
-
-//                assigned the reversed string
-                C = sb3.toString();
+                C = reverseString(C);
 
 //                  I Assigned B the rest of the string from the exact half + 1 index to the end
                 D = decyptData.substring(dividedDecyptByTwo + 1);
 
-                //Used the StringBuilder class to create a copy of B
-                StringBuilder sb4 = new StringBuilder(D);
-
-//                Reversed string as specified
-                sb4.reverse();
-
-//                assigned the reversed string;
-                D = sb4.toString();
+               D = reverseString(D);
 
 
 
             } else {
-//                If it's even i repeated the same process.
-//                But +1 wont be added to the half because it's already an even number;
+//                If it's even I repeated the same process.
+//                But +1 won't be added to the half because it's already an even number;
 
 
                 C = decyptData.substring(0, dividedDecyptByTwo);
-                StringBuilder sb3 = new StringBuilder(C);
-                sb3.reverse();
-                C = sb3.toString();
+
+                C= reverseString(C);
 
 
                 D = decyptData.substring(dividedDecyptByTwo);
-                StringBuilder sb4 = new StringBuilder(D);
-                sb4.reverse();
-                D = sb4.toString();
+
+                D = reverseString(D);
 
             }
         }
