@@ -12,6 +12,7 @@ public class Student {
         this.address = address;
     }
 
+/*
     public void setName(String name){
         this.name = name;
     }
@@ -23,6 +24,7 @@ public class Student {
     public void setAddress(String address){
         this.name = address;
     }
+*/
 
     public String getName(){
         return name;
