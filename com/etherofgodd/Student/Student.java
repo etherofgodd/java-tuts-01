@@ -1,5 +1,7 @@
 package com.etherofgodd.Student;
 
+import accessmodifiers.Test;
+
 public class Student {
 
     String name;
@@ -51,6 +53,10 @@ public class Student {
         Student john = new Student("John", 29, "3, ford close, vi,lagos.");
         System.out.println(john.formatCred());
         System.out.println(john.getAddress());
+
+        Test t = new Test();
+        t.display();
+
     }
 
 
