@@ -4,12 +4,8 @@ import java.util.Scanner;
 
 public class Encrypt {
 
-    public static  void main(String[] args) {
-
-//      ENCRYPT data
-
-
-//        I used this to collect the data input
+    public void encrypt(){
+        //        I used this to collect the data input
         Scanner dataInput = new Scanner(System.in);
         System.out.println("Data to be encrypted:");
 
@@ -62,20 +58,20 @@ public class Encrypt {
 
 
             } else {
-//                If it's even i repeated the same process.
-//                But +1 wont be added to the half because it's already an even number;
+//                If it's even I repeated the same process.
+//                But +1 won't be added to the half because it's already an even number;
 
 
-                    A = data.substring(0, dividedByTwo);
-                    StringBuilder sb1 = new StringBuilder(A);
-                    sb1.reverse();
-                    A = sb1.toString();
+                A = data.substring(0, dividedByTwo);
+                StringBuilder sb1 = new StringBuilder(A);
+                sb1.reverse();
+                A = sb1.toString();
 
 
-                    B = data.substring(dividedByTwo);
-                    StringBuilder sb2 = new StringBuilder(B);
-                    sb2.reverse();
-                    B = sb2.toString();
+                B = data.substring(dividedByTwo);
+                StringBuilder sb2 = new StringBuilder(B);
+                sb2.reverse();
+                B = sb2.toString();
 
             }
 
@@ -100,6 +96,10 @@ public class Encrypt {
 
         System.out.println("The encrypted data is : "+ Output);
 
+
+    }
+
+    public void decrypt(){
         Scanner decryptInput = new Scanner(System.in);
         System.out.println("Data to be Decrypted:");
 
@@ -124,7 +124,7 @@ public class Encrypt {
             if (decyptData.length() % 2 == 1){
 //                if its an odd number, i add one to the end of the  half, making it even. then i use the substring method to return the
 //                sub string from index 0, to exact half + 1 index
-                C = decyptData.substring(0, dividedByTwo + 1);
+                C = decyptData.substring(0, dividedDecyptByTwo + 1);
 
 //                Used the StringBuilder class to create a copy of A
                 StringBuilder sb3 = new StringBuilder(C);
@@ -136,7 +136,7 @@ public class Encrypt {
                 C = sb3.toString();
 
 //                  I Assigned B the rest of the string from the exact half + 1 index to the end
-                D = decyptData.substring(dividedByTwo + 1);
+                D = decyptData.substring(dividedDecyptByTwo + 1);
 
                 //Used the StringBuilder class to create a copy of B
                 StringBuilder sb4 = new StringBuilder(D);
@@ -154,13 +154,13 @@ public class Encrypt {
 //                But +1 wont be added to the half because it's already an even number;
 
 
-                C = decyptData.substring(0, dividedByTwo);
+                C = decyptData.substring(0, dividedDecyptByTwo);
                 StringBuilder sb3 = new StringBuilder(C);
                 sb3.reverse();
                 C = sb3.toString();
 
 
-                D = decyptData.substring(dividedByTwo);
+                D = decyptData.substring(dividedDecyptByTwo);
                 StringBuilder sb4 = new StringBuilder(D);
                 sb4.reverse();
                 D = sb4.toString();
@@ -188,8 +188,5 @@ public class Encrypt {
         System.out.println("The encrypted data is : "+ DecryptOutpt);
 
     }
-
-
-
 
 }
