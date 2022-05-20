@@ -2,7 +2,7 @@ import utils.Helpers;
 
 import java.math.BigDecimal;
 
-public class BankAccount implements  IBankFunction{
+public class BankAccount implements IBankFunction {
     private String firstName;
     private String lastName;
     private String phoneNumber;

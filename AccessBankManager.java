@@ -86,6 +86,18 @@ public class AccessBankManager {
         return fundsInput.nextBigDecimal();
     }
 
+    /**
+     * A static method that returns the balance of a banking instance.
+     *
+     * @param accessBankAccount
+     */
+    static void getBalance(AccessBank accessBankAccount) {
+        System.out.println("Account balance for account number: "
+                + accessBankAccount.getAccountNumber()
+                + " is "
+                + accessBankAccount.getAccountBalance());
+    }
+
 
 
 }

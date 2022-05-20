@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
 
-        Main.defaultStart();
+//        Main.defaultStart();
 
         Main.accessBankStart();
 
@@ -63,5 +63,9 @@ public class Main {
         AccessBankManager.setFatherName(accessbankAccount, fathername);
 
 
+        System.out.println(AccessBankManager.createDefault(accessbankAccount));
+
+
+        AccessBankManager.getBalance(accessbankAccount);
     }
 }
