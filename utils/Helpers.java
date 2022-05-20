@@ -9,26 +9,16 @@ public class Helpers {
     }
 
     public static Boolean validatePhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() == 11) {
-            return true;
-        } else {
-            return false;
-        }
+        return phoneNumber.length() == 11;
     }
 
-    public static Boolean compareBigInt(BigDecimal one, BigDecimal two) {
+    public static Boolean compareBigDecimal(BigDecimal one, BigDecimal two) {
         int res;
         res = one.compareTo(two);
-        if (res == 1 && res == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return res >= 0;
     }
 
     public static Boolean verifyInput(String input) {
-        if (input.length() > 0)
-            return true;
-        else return false;
+        return input.length() > 0;
     }
 }

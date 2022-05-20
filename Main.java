@@ -1,37 +1,66 @@
+import utils.Helpers;
+
 import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
 
-        Main.start();
+        Main.defaultStart();
 
+        Main.accessBankStart();
 
-//        System.out.println("\n Line break, new user :) ");
-//        DataBank dataBank = new DataBank("Ade","09026524442");
-//        System.out.println(dataBank.getBankDetails());
-//        System.out.println(dataBank.getData());
-//
-//        dataBank.consumeSuperClassMethod();
     }
 
-    public static void start() {
-        String firstName = BankManager.getFirstName();
-        String lastName = BankManager.getLastName();
-        String phoneNumber = BankManager.getPhoneNumber();
-        BankManager.setFirstName(firstName);
-        BankManager.setLastName(lastName);
-        BankManager.setPhoneNumber(phoneNumber);
-        BankManager.createDefault();
+    public static void defaultStart() {
+        BankAccount bankAccount = BankManager.createBank();
 
-        BankManager.getUserDetails();
+        String firstName = BankManager.getFirstName();
+        Boolean isFirstNameOk = Helpers.verifyInput(firstName);
+        while (!isFirstNameOk) {
+            System.out.println("Please enter a valid credential");
+            firstName = BankManager.getFirstName();
+            if (firstName.length() > 0) break;
+        }
+
+        String lastName = BankManager.getLastName();
+        Boolean isLastNameOk = Helpers.verifyInput(lastName);
+        while (!isLastNameOk) {
+            System.out.println("Please enter a valid credential");
+            lastName = BankManager.getLastName();
+            if (lastName.length() > 0) break;
+        }
+
+        String phoneNumber = BankManager.getPhoneNumber();
+        Boolean isPhoneNumberOk = Helpers.validatePhoneNumber(phoneNumber);
+        while (!isPhoneNumberOk) {
+            System.out.println("Please enter a valid credential");
+            phoneNumber = BankManager.getPhoneNumber();
+            if (phoneNumber.length() == 11) break;
+        }
+
+
+        BankManager.setFirstName(bankAccount, firstName);
+        BankManager.setLastName(bankAccount, lastName);
+        BankManager.setPhoneNumber(bankAccount, phoneNumber);
+
+        BankManager.createDefault(bankAccount);
+
+        BankManager.getUserDetails(bankAccount);
 
         BigDecimal fundD = BankManager.getDepositAmount();
-        BankManager.makeDeposit(fundD);
+        BankManager.makeDeposit(bankAccount, fundD);
 
         BigDecimal fundW = BankManager.getWithdrawalAmount();
-        BankManager.makeWithdrawal(fundW);
+        BankManager.makeWithdrawal(bankAccount, fundW);
 
-        BankManager.getBalance();
+        BankManager.getBalance(bankAccount);
+    }
+
+    public static void accessBankStart() {
+        AccessBank accessbankAccount = AccessBankManager.createAccessbankAccount();
+
+        String fathername = AccessBankManager.getUsersfatherName();
+        AccessBankManager.setFatherName(accessbankAccount, fathername);
 
 
     }
