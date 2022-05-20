@@ -64,14 +64,12 @@ public class BankAccount implements IBankFunction {
         );
     }
 
-    @Override
     public String makeDeposit(BigDecimal funds) {
         BigDecimal temp = this.getAccountBalance();
         this.accountBalance = temp.add(funds);
         return "Account Credited";
     }
 
-    @Override
     public String makeWithdrawal(BigDecimal funds) {
         BigDecimal temp = this.getAccountBalance();
         Boolean valid = Helpers.compareBigDecimal(temp, funds);
